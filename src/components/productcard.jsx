@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ViewProductButton from './button';
 
 const Productcard = () => {
   const product = [
@@ -28,26 +29,39 @@ const Productcard = () => {
   ];
 
   return (
-    <div style={{
-      border:"2px solid grey",
-      padding:"14px",
-      borderRadius:"15px",
-      display: "grid",
-      gridTemplateColumns:"repeat(2,1fr)"
-    }} >
-      {product.map((pro,index)=>(
-        <div style={{
-          border: "1px solid #ddd", 
-          borderRadius: "10px", 
-          padding: "20px", 
-          textAlign: "center", 
-          width: "250px", 
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)" 
-        }} >
-          <img src={pro.photo} alt={pro.name} height="150px" /> 
+    <div
+      style={{
+        border: '2px solid grey',
+        padding: '14px',
+        borderRadius: '15px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2,1fr)',
+      }}
+    >
+      {product.map((pro, index) => (
+        <div
+          style={{
+            border: '1px solid #ddd',
+            borderRadius: '10px',
+            padding: '20px',
+            textAlign: 'center',
+            width: '250px',
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+          }}
+        >
+          <img
+            src={pro.photo}
+            alt={pro.name}
+            height="150px"
+            style={{
+              borderRadius: '15px',
+              border: '3px solid grey',
+            }}
+          />
           <h2>{pro.name} </h2>
           <h3>₹{pro.price} </h3>
-           </div>
+          <ViewProductButton />
+        </div>
       ))}
     </div>
   );
